@@ -22,8 +22,10 @@ apt install -y php7.4 php7.4-cli php7.4-common php7.4-fpm php7.4-mysql php7.4-cu
 php -v
 
 # --- MySQL Installation (Fully Automated) ---
-echo "--- Configuring and Installing MySQL Server ---"
+echo "Installing gnupg (pre-dependency for MySQL APT config)..."
+apt install -y gnupg
 
+echo "--- Configuring and Installing MySQL Server ---"
 # Define the MySQL APT config package path
 MYSQL_APT_CONFIG_DEB="/tmp/mysql-apt-config_0.8.29-1_all.deb"
 
