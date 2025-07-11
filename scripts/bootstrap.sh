@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_BASE_URL="https://raw.githubusercontent.com/mariglenc/server-setup-scripts/main/scripts" # <--- REPLACE WITH YOUR ACTUAL URL
+SCRIPT_BASE_URL="https://raw.githubusercontent.com/mariglenc/server-setup-scripts/main/scripts"
 
 run_script() {
     local script_name=$1

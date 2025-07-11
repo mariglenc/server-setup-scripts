@@ -3,7 +3,7 @@
 set -e
 
 MYSQL_CONF_FILE="/etc/mysql/mysql.conf.d/mysqld.cnf"
-MYSQL_ROOT_PASSWORD="MyslqEatech2025!!" # <<< CHANGE THIS!
+MYSQL_ROOT_PASSWORD="MyslqEatech2025!!"
 
 sed -i '/\[mysqld\]/a bind-address = 0.0.0.0' "$MYSQL_CONF_FILE"
 
