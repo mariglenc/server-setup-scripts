@@ -8,3 +8,6 @@
 6. 4.add-users-remote.sh
 7. 5.add-applications.sh
 6. 6.grant-remote-to-applications.sh
+
+
+wget -q "https://github.com/mariglenc/server-setup-scripts/blob/main/scripts/bootstrap.sh" -O /tmp/bootstrap.sh && chmod +x /tmp/bootstrap.sh && /tmp/bootstrap.sh
