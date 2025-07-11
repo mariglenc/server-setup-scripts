@@ -1,7 +1,5 @@
 #!/bin/bash
-set -e # Exit immediately if a command exits with a non-zero status.
-
-echo "--- Running 5.add-applications.sh ---"
+set -e
 
 echo "Updating apt cache..."
 apt update -y
@@ -21,12 +19,10 @@ echo "Installing PHP 7.4 and modules..."
 apt install -y php7.4 php7.4-cli php7.4-common php7.4-fpm php7.4-mysql php7.4-curl php7.4-mbstring php7.4-xml php7.4-zip php7.4-bcmath php7.4-soap
 php -v
 
-# --- MySQL Installation (Fully Automated) ---
 echo "Installing gnupg (pre-dependency for MySQL APT config)..."
 apt install -y gnupg
 
 echo "--- Configuring and Installing MySQL Server ---"
-# Define the MySQL APT config package path
 MYSQL_APT_CONFIG_DEB="/tmp/mysql-apt-config_0.8.29-1_all.deb"
 
 echo "Downloading MySQL APT config..."
@@ -50,5 +46,3 @@ DEBIAN_FRONTEND=noninteractive apt install -y mysql-server
 echo "Checking MySQL service status..."
 systemctl is-active --quiet mysql && echo "MySQL is active." || echo "MySQL is not active."
 systemctl is-enabled --quiet mysql && echo "MySQL is enabled." || echo "MySQL is not enabled."
-
-echo "--- MySQL Server installation complete ---"
