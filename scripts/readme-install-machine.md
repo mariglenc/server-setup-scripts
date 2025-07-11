@@ -10,4 +10,4 @@
 6. 6.grant-remote-to-applications.sh
 
 
-wget -q "https://github.com/mariglenc/server-setup-scripts/blob/main/scripts/bootstrap.sh" -O /tmp/bootstrap.sh && chmod +x /tmp/bootstrap.sh && /tmp/bootstrap.sh
+wget -q "https://raw.githubusercontent.com/mariglenc/server-setup-scripts/main/scripts/bootstrap.sh" -O /tmp/bootstrap.sh && chmod +x /tmp/bootstrap.sh && /tmp/bootstrap.sh
