@@ -34,10 +34,14 @@ chmod 600 ~/.my.cnf # Secure permissions for the temporary file
 echo "Setting/Updating MySQL root password..."
 mysql -u root --connect-expired-password -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';"
 
+# --- ADDED: Create the database if it doesn't exist ---
+echo "Creating database '$APP_DB_NAME' if it does not exist..."
+mysql -u root -p"$MYSQL_ROOT_PASSWORD" -e "CREATE DATABASE IF NOT EXISTS \`$APP_DB_NAME\`;"
+
 echo "Creating application database user '$APP_DB_USER' and granting privileges..."
 mysql -u root -p"$MYSQL_ROOT_PASSWORD" -e "
 CREATE USER '$APP_DB_USER'@'%' IDENTIFIED BY '$APP_DB_PASSWORD';
-GRANT ALL PRIVILEGES ON $APP_DB_NAME.* TO '$APP_DB_USER'@'%';
+GRANT ALL PRIVILEGES ON \`$APP_DB_NAME\`.* TO '$APP_DB_USER'@'%';
 FLUSH PRIVILEGES;
 "
 
