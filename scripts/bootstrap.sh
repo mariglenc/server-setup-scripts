@@ -23,5 +23,4 @@ run_script "3.add-users.sh"
 run_script "5.add-applications.sh"
 run_script "6.grant-remote-to-applications.sh"
 
--
 echo "All initial configuration scripts executed."
